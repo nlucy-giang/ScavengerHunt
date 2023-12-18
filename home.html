@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<style>
+@font-face {
+    font-family: 'JetBrains';
+    src: url('JetBrains.otf') format('opentype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+  body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('background.png');
+      background-size: cover;
+  }
+
+  .form-container {
+    font-family: 'JetBrains', 'Arial';
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+  }
+
+  form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  button {
+      padding: 10px;
+      background-color: #C8C8C8;
+      border: none;
+      cursor: pointer;
+  }
+
+  button:hover {
+      background-color: #5C5D6C;
+  }
+
+  #errorMessage {
+      color: red;
+      margin-top: 10px;
+  }
+
+  #successContainer {
+    font-family: 'JetBrains', 'Arial';
+    margin-left: 0;
+  }
+</style>
+<body>
+    <div class="form-container">
+        <form id="loginForm">
+            <label for="agentID">Agent ID:</label>
+            <input type="text" id="agentID" name="agentID" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="checkLogin()">Login</button>
+        </form>
+        <p id="errorMessage"></p>
+    </div>
+
+    <div class="container" id="successContainer" style="display: none;">
+        <p id="successMessage">The culprit is Lanz. Warn the others immediately.</p>
+        <p id="successMessage">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- M.W.</p><br>
+    </div>
+</body>
+<script>
+        function checkLogin() {
+            var agentID = document.getElementById('agentID').value.toLowerCase();
+            var password = document.getElementById('password').value.toLowerCase();
+            var errorMessage = document.getElementById('errorMessage');
+            var loginContainer = document.getElementById('loginContainer');
+            var successContainer = document.getElementById('successContainer');
+
+            if (agentID === 'cdfcd' && password === 'hello123') {
+                // Change background and show success message
+                document.body.style.backgroundImage = "url('newbackground.png')";
+                loginForm.style.display = 'none';
+                successContainer.style.display = 'block';
+            } else {
+              errorMessage.textContent = 'Invalid login';
+
+              // Hide the error message after 1 second
+              setTimeout(function () {
+                  errorMessage.textContent = '';
+              }, 1000);
+            }
+        }
+    </script>
+</html>
