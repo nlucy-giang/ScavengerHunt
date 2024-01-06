@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>GLOBAL INTEL</title>
     <style>
         @font-face {
             font-family: 'JetBrains';
@@ -56,10 +56,15 @@
             margin-top: 10px;
         }
 
-        #successContainer {
+        #lucyContainer {
             font-family: 'JetBrains', 'Arial';
             margin-left: 47px;
             margin-right: 33px;
+        }
+
+        img {
+          width: 380px;
+          height: 380px;
         }
 
         /* Media query for smaller screens (phones) */
@@ -67,6 +72,41 @@
             body {
                 background-image: url('iphonebg.png');
             }
+            img {
+              width: 280px;
+              height: 280px;
+            }
+        }
+
+        #serenaContainer {
+            font-family: 'JetBrains', 'Arial';
+            margin-left: 47px;
+            margin-right: 33px;
+        }
+        #kimboContainer {
+            font-family: 'JetBrains', 'Arial';
+            margin-left: 47px;
+            margin-right: 33px;
+        }
+        #enyaContainer {
+            font-family: 'JetBrains', 'Arial';
+            margin-left: 47px;
+            margin-right: 33px;
+        }
+        #lanzContainer {
+            font-family: 'JetBrains', 'Arial';
+            margin-left: 47px;
+            margin-right: 33px;
+        }
+        #hirotoContainer {
+            font-family: 'JetBrains', 'Arial';
+            margin-left: 47px;
+            margin-right: 33px;
+        }
+        #sondiaContainer {
+            font-family: 'JetBrains', 'Arial';
+            margin-left: 47px;
+            margin-right: 33px;
         }
     </style>
 </head>
@@ -85,10 +125,41 @@
         <p id="errorMessage"></p>
     </div>
 
-    <div id="successContainer" style="display: none;">
+    <div id="lucyContainer" style="display: none;">
         <p id="successMessage">The culprit is K.Y. Warn the others immediately.</p><br><br><br>
-        <p id="successMessage">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-M.W.</p>
+        <p id="successMessage">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Agent Turtle</p>
     </div>
+    <div id="maxContainer" style="display: none;">
+      <p id="successMessage">Welcome Agent M.W.</p><br><br><br>
+      <p id="successMessage">Here are your mission details:</p>
+    </div>
+    <div id="sondiaContainer" style="display: none;">
+        <p id="successMessage">Welcome Agent S.LU</p><br><br><br>
+        <p id="successMessage">Here are your mission details:</p>
+    </div>
+    <div id="serenaContainer" style="display: none;">
+      <br><p id="successMessage">Welcome Agent S.LE</p>
+      <p id="successMessage">Here are your mission details:</p>
+      <p id="successMessage">Our intel operatives have a lead. Report to the site immediately.</p>
+      <img src="site.png"></img>
+    </div>
+    <div id="kimboContainer" style="display: none;">
+      <p id="successMessage">Welcome Agent K.Y.</p><br><br><br>
+      <p id="successMessage">Here are your mission details:</p>
+    </div>
+    <div id="hirotoContainer" style="display: none;">
+      <p id="successMessage">Welcome Agent H.S.</p><br><br><br>
+      <p id="successMessage">Here are your mission details:</p>
+    </div>
+    <div id="lanzContainer" style="display: none;">
+      <p id="successMessage">Welcome Agent L.D.</p><br><br><br>
+      <p id="successMessage">Here are your mission details:</p>
+    </div>
+    <div id="enyaContainer" style="display: none;">
+        <<p id="successMessage">Welcome Agent E.C.</p><br><br><br>
+        <p id="successMessage">Here are your mission details:</p>
+    </div>
+
 
     <script>
         function checkLogin() {
@@ -96,10 +167,17 @@
             var password = document.getElementById('password').value.toLowerCase();
             var errorMessage = document.getElementById('errorMessage');
             var loginForm = document.getElementById('loginForm');
-            var successContainer = document.getElementById('successContainer');
+            var lucyContainer = document.getElementById('lucyContainer');
+            var kimboContainer = document.getElementById('kimboContainer');
+            var sondiaContainer = document.getElementById('sondiaContainer');
+            var serenaContainer = document.getElementById('serenaContainer');
+            var hirotoContainer = document.getElementById('hirotoContainer');
+            var lanzContainer = document.getElementById('lanzContainer');
+            var enyaContainer = document.getElementById('enyaContainer');
+
             var formContainer = document.getElementById('form-container');
 
-            if (agentID === 'cdfcd' && password === '7824c2ta') {
+            if (agentID === 'turtle' && password === '7824c2ta') {
     // Determine the screen width
     var isSmallScreen = window.innerWidth <= 600;
 
@@ -107,7 +185,70 @@
     document.body.style.backgroundImage = isSmallScreen ? "url('iphonebgs.png')" : "url('newbackground.png')";
     formContainer.style.display = 'none';
     loginForm.style.display = 'none';
-    successContainer.style.display = 'block';
+    lucyContainer.style.display = 'block';
+} else if (agentID === 'pony' && password === '0403') {
+  // Determine the screen width
+  var isSmallScreen = window.innerWidth <= 600;
+
+  // Change background and show success message
+  document.body.style.backgroundImage = isSmallScreen ? "url('iphonebgs.png')" : "url('newbackground.png')";
+  formContainer.style.display = 'none';
+  loginForm.style.display = 'none';
+  serenaContainer.style.display = 'block';
+} else if (agentID === 'kangeroo' && password === '1228') {
+  // Determine the screen width
+  var isSmallScreen = window.innerWidth <= 600;
+
+  // Change background and show success message
+  document.body.style.backgroundImage = isSmallScreen ? "url('iphonebgs.png')" : "url('newbackground.png')";
+  formContainer.style.display = 'none';
+  loginForm.style.display = 'none';
+  kimboContainer.style.display = 'block';
+} else if (agentID === 'juno' && password === '0531') {
+  // Determine the screen width
+  var isSmallScreen = window.innerWidth <= 600;
+
+  // Change background and show success message
+  document.body.style.backgroundImage = isSmallScreen ? "url('iphonebgs.png')" : "url('newbackground.png')";
+  formContainer.style.display = 'none';
+  loginForm.style.display = 'none';
+  sondiaContainer.style.display = 'block';
+} else if (agentID === 'maverick' && password === '0315') {
+  // Determine the screen width
+  var isSmallScreen = window.innerWidth <= 600;
+
+  // Change background and show success message
+  document.body.style.backgroundImage = isSmallScreen ? "url('iphonebgs.png')" : "url('newbackground.png')";
+  formContainer.style.display = 'none';
+  loginForm.style.display = 'none';
+  maxContainer.style.display = 'block';
+} else if (agentID === 'lagusa' && password === '1209') {
+  // Determine the screen width
+  var isSmallScreen = window.innerWidth <= 600;
+
+  // Change background and show success message
+  document.body.style.backgroundImage = isSmallScreen ? "url('iphonebgs.png')" : "url('newbackground.png')";
+  formContainer.style.display = 'none';
+  loginForm.style.display = 'none';
+  hirotoContainer.style.display = 'block';
+} else if (agentID === 'cobra' && password === '0330') {
+  // Determine the screen width
+  var isSmallScreen = window.innerWidth <= 600;
+
+  // Change background and show success message
+  document.body.style.backgroundImage = isSmallScreen ? "url('iphonebgs.png')" : "url('newbackground.png')";
+  formContainer.style.display = 'none';
+  loginForm.style.display = 'none';
+  lanzContainer.style.display = 'block';
+} else if (agentID === 'onion' && password === '0316') {
+  // Determine the screen width
+  var isSmallScreen = window.innerWidth <= 600;
+
+  // Change background and show success message
+  document.body.style.backgroundImage = isSmallScreen ? "url('iphonebgs.png')" : "url('newbackground.png')";
+  formContainer.style.display = 'none';
+  loginForm.style.display = 'none';
+  enyaContainer.style.display = 'block';
 } else {
     errorMessage.textContent = 'Invalid login';
 
